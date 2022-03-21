@@ -1,0 +1,11 @@
+.container{
+    background-color: cornflowerblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 2px solid rebeccapurple;
+    
+}
+.ep{
+    text-align: center;
+}

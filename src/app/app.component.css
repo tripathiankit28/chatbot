@@ -1,11 +1,26 @@
 .container{
-    background-color: cornflowerblue;
+    background-color: antiquewhite;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 0;
-    margin: 0;
+    margin: 80px;
     border: 2px solid rebeccapurple;
+    height: 500px;
+    
+
     
 }
 .ep{
     text-align: center;
+}
+.flex{
+    width: 100%;
+}
+.container-chatbot{
+    display: flex;
+    flex-direction: column;
+}
+.main{
+    position: absolute;
+    top: 80%;
+    right: 42%;
 }

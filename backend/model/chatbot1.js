@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 var chatBotSchema = new mongoose.Schema({
-    question : {
+    answer : {
         type: String
     },
-    answer : {
-        type : String
+    serialNo : {
+        type : Number
     }
     
 });
 
-module.exports=mongoose.model('response', chatBotSchema);
+module.exports=mongoose.model('answers', chatBotSchema);

@@ -17,7 +17,7 @@
     </div>
     <br>
     <div  style="float: left;"> 
-      
+     
       <p *ngFor="let i of chatBotHistory" style="color: brown;">chatbot:- <b>{{i}}</b></p><br>
     </div>
     <br>
@@ -25,6 +25,8 @@
        <form class="ep" #form="ngForm" (ngSubmit)="getVal(form.value)">
         <input style="width: 180px;" type="text" name="response" ngModel>
         <button class="btn btn-dark" type="submit" >Send</button>
+        <p>{{dateAndTime}}</p>
+        <app-weather></app-weather>
      </form>
      </div>
      </div>   

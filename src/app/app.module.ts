@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatbotService } from './services/chatbot.service';
 import {HttpClientModule} from '@angular/common/http';
+import { WeatherComponent } from './weather/weather.component';
+import { WeatherService } from './services/weather.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherComponent
     
   ],
   imports: [
@@ -16,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ChatbotService],
+  providers: [ChatbotService,
+             WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

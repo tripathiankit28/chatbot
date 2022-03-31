@@ -19,7 +19,9 @@
     <div  style="float: left;"> 
      
       <p *ngFor="let i of chatBotHistory" style="color: brown;">chatbot:- <b>{{i}}</b></p><br>
-      <div *ngIf="ans==1">
+    
+      <div *ngIf="answer==12">
+        
         <app-weather></app-weather>
       </div>
     </div>

@@ -7,10 +7,12 @@ import { ChatbotService } from './services/chatbot.service';
 import {HttpClientModule} from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 import { WeatherService } from './services/weather.service';
+
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent
+    WeatherComponent,
+    
     
   ],
   imports: [

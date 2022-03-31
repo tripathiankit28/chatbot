@@ -16,7 +16,7 @@ export class AppComponent {
   
   title = 'chatbot';
   
-  public ans:any;
+  public answer:any;
   public demo:any;
   
   public chatbotresponse:any;
@@ -28,22 +28,33 @@ export class AppComponent {
     // console.log(UserRes);
     this.userHistory.push(UserRes.response)
     this.demo=UserRes.response;
-    console.log(this.demo)
-    this.ans=this.demo.indexOf("weather")
-    if(this.ans!=-1){
-     this.ans=1;
+    console.log(this.demo);
+    this.answer=this.demo.indexOf("weather")
+    if(this.demo.indexOf("weather")!=-1){
+      if(this.demo.indexOf("tomorrow")!=-1){
+        this.weatherService.tomorrow=true;
+        this.answer=12;
+      }
+      else if(this.demo.indexOf("days")!=-1){
+        this.weatherService.default=true;
+        this.answer=12
+       }
+      else {
+     this.weatherService.today=true;
+     this.answer=12;
     }
-    this.ans=this.demo.indexOf("temperature")
-    if(this.ans!=-1){
-     this.ans=1;
+     
+    //  console.log(this.answer);
     }
-    this.ans=this.demo.indexOf("time")
-    if(this.ans!=-1){
+  
+    
+    
+    else if(this.demo.indexOf("time")!=-1){
      this.chatbotresponse= Date();
      this.chatBotHistory.push(this.chatbotresponse)
     }
-    this.ans=this.demo.indexOf("date")
-    if(this.ans!=-1){
+    
+    else if(this.demo.indexOf("date")!=-1){
      this.chatbotresponse=Date();
      this.chatBotHistory.push(this.chatbotresponse)
     }

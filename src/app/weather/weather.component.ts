@@ -9,10 +9,12 @@ import { WeatherService } from '../services/weather.service';
 export class WeatherComponent implements OnInit {
   public lat:any;
   public lon:any;
-  public weatherData:any;
+ 
+  public weatherAllData:any;
+  public location:any;
   
 
-  constructor(private weather:WeatherService) { }
+  constructor(public weather:WeatherService) { }
 
   ngOnInit(): void {
     if("geolocation" in navigator){
@@ -21,7 +23,9 @@ export class WeatherComponent implements OnInit {
         this.lon=success.coords.longitude;
 
         this.weather.getWeatherDataCoords(this.lat,this.lon).subscribe(data=>{
-          this.weatherData=data;
+          this.weatherAllData=data.list;
+          this.location=data.city
+           console.log(data)
         });
       })
     

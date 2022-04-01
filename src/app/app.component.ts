@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { ChatbotService } from './services/chatbot.service';
-import { Router } from '@angular/router';
-import { WeatherComponent } from './weather/weather.component';
 import { WeatherService } from './services/weather.service';
 
 @Component({
@@ -21,35 +19,27 @@ export class AppComponent {
   
   public chatbotresponse:any;
   constructor(private chatbotservice:ChatbotService,
-              private router:Router,
               private weatherService:WeatherService
               ) { }
-  getVal(UserRes:any){
-    // console.log(UserRes);
+  getVal(UserRes:any){// this function is used for taking the user input
+  
     this.userHistory.push(UserRes.response)
     this.demo=UserRes.response;
     console.log(this.demo);
-    this.answer=this.demo.indexOf("weather")
+    this.answer=this.demo.indexOf("weather")//checking different cases for weather api 
     if(this.demo.indexOf("weather")!=-1){
       if(this.demo.indexOf("tomorrow")!=-1){
-        this.weatherService.tomorrow=true;
-        this.answer=12;
-      }
-      else if(this.demo.indexOf("days")!=-1){
         this.weatherService.default=true;
-        this.answer=12
-       }
+        this.answer=true;
+        this.weatherService.def=10;
+      }
       else {
-     this.weatherService.today=true;
-     this.answer=12;
+     this.weatherService.default=true;
+     this.weatherService.def=0;
+     this.answer=true;
     }
-     
-    //  console.log(this.answer);
-    }
-  
-    
-    
-    else if(this.demo.indexOf("time")!=-1){
+  }
+    else if(this.demo.indexOf("time")!=-1){// checking case for time and date
      this.chatbotresponse= Date();
      this.chatBotHistory.push(this.chatbotresponse)
     }
@@ -58,28 +48,12 @@ export class AppComponent {
      this.chatbotresponse=Date();
      this.chatBotHistory.push(this.chatbotresponse)
     }
-
-
-
-    // if(UserRes.response==="date"){
-    //   console.log(UserRes);
-    //   this.chatbotresponse=  Date();
-    // console.log(this.chatbotresponse)
-    // this.chatBotHistory.push(this.chatbotresponse)
-    // }
-    // else if (UserRes.response==="humidity"|| UserRes.response=="weather" || UserRes.response=="temperature"){
-    //   this.dateAndTime=1;
-    // }
    
     else{
     this.chatbotservice.postData(UserRes).subscribe(res=>{
     this.chatbotresponse=res.response;
-    // console.log(this.chatbotresponse);
     this.chatBotHistory.push(this.chatbotresponse)
     })
-
-    // console.log(this.userHistory)
-    // console.log(this.chatBotHistory)
   }
 }
   

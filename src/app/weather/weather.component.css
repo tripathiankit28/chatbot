@@ -1,6 +1,10 @@
 .main-div{
     background-color: bisque;
 }
-.today{
-    background-color: bisque;
+
+table td td{
+    text-align: center;
+}
+.tdata{
+    text-align:center
 }

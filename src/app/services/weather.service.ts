@@ -9,9 +9,10 @@ export class WeatherService {
   private APIKey="69dbb15411690d509325ff7a53cfcfa8";
 
   constructor(private http:HttpClient) {}
-  public today=false;
-  public tomorrow=false;
+  // public today=false;
+  // public tomorrow=false;
   public default=false;
+  public def:any;
 
 
     getWeatherDataCoords(lat:any,lon:any){

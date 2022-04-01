@@ -1,13 +1,11 @@
+
 .container{
-    background-color: lightgreen;
+    background-color: cornflowerblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 0;
     margin: 80px;
-    border: 2px solid rebeccapurple;
-    height: 500px;
-    
-
-    
+    border: 2px solid black;
+    height: 500px;    
 }
 .ep{
     text-align: center;
@@ -23,4 +21,34 @@
     position: absolute;
     top: 80%;
     right: 42%;
+}
+.user{
+    float: right;
+}
+.user p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: beige;
+    border: 2px solid orange;
+}
+
+.bot{
+    float: left;
+}
+
+.bot p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:burlywood;
+    border: 2px solid palegreen;
+}
+
+.container h4{
+    background-color: cadetblue;
+    color: black;
+    text-align: center;
+}
+
+.btn{
+    background-color: blueviolet;
+    border-radius: 2px;
+
 }

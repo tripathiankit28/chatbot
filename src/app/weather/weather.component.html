@@ -1,25 +1,6 @@
 
-<div *ngIf="weather.default" class="main-div">
-    <table >
-        <tr>
-            <th>City</th>
-            <th>Country</th>
-            <th>Temp</th>
-            <th>Humidity</th>
-        </tr>
-        <tbody *ngFor="let weatherData of weatherAllData;let i = index">
-        <tr *ngIf="i%8==0">
-
-            <td>{{location.name}}</td>
-            <td>{{location.country}}</td>
-            <td>{{weatherData.main.temp}}</td>
-            <td>{{weatherData.main.humidity}}</td>
-        </tr>
-        </tbody>
-
-</table>
-</div>
-<div *ngIf="weather.today" class="today">
+<!-- Table is being used for displaying the weather details according to the user input-->
+<div *ngIf="weather.default" class="today">
     <table>
         <tr>
             <th>City</th>
@@ -27,29 +8,13 @@
             <th>Temp</th>
             <th>Humidity</th>
         </tr>
-        <tr>
+        <tr class="tdata">
             <td>{{location.name}}</td>
             <td>{{location.country}}</td>
-            <td>{{weatherAllData[0].main.temp}}</td>
-            <td>{{weatherAllData[0].main.humidity}}</td>
+            <td>{{weatherAllData[weather.def].main.temp}}</td>   <!--value of weather.def variable will be keep changing according to the need of user .-->
+            <td>{{weatherAllData[weather.def].main.humidity}}</td>
         </tr>
 
 </table>
 </div>
-<div *ngIf="weather.tomorrow">
-    <table>
-        <tr>
-            <th>City</th>
-            <th>Country</th>
-            <th>Temp</th>
-            <th>Humidity</th>
-        </tr>
-        <tr>
-            <td>{{location.name}}</td>
-            <td>{{location.country}}</td>
-            <td>{{weatherAllData[10].main.temp}}</td>
-            <td>{{weatherAllData[10].main.humidity}}</td>
-        </tr>
 
-</table>
-</div>
